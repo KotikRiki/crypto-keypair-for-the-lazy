@@ -58,7 +58,7 @@ example mnemonic phrase here ...
 
 2. Запустите скрипт:
 ```bash
-python seed_to_private_evm_solana.py
+python main.py
 ```
 
 3. Выберите опцию:
