@@ -62,14 +62,8 @@ python seed_to_private_evm_solana.py
 ```
 
 3. Выберите опцию:
-
-| № | Описание | Вывод |
-|--|----------|-------|
-| 1 | Mnemonic → Private Key (EVM) | `private_keys_evm.txt` |
-| 2 | Private Key → Address (EVM) | `addresses_evm.txt` |
-| 3 | Mnemonic → Address (EVM) | `addresses_evm.txt` |
-| 4 | Mnemonic → Private Key (Solana) | `private_keys_solana.txt` |
-| 5 | Mnemonic → Address (Solana) | `addresses_solana.txt` |
+<div data-scrollable-x="true" class="overflow-auto scrollbar-transparent-track" style="width:calc(100% + 0.75rem * 2);margin-left:-0.75rem;margin-right:-0.75rem;padding-left:0.75rem;padding-right:0.75rem"><table class="w-full px-3"><thead><tr><th class="whitespace-nowrap">№</th><th class="whitespace-nowrap">Описание</th><th class="whitespace-nowrap">Вывод</th></tr></thead><tbody><tr><td>1</td><td>Mnemonic → Private Key (EVM)</td><td><code class="inline-code-block">private_keys_evm.txt</code></td></tr><tr><td>2</td><td>Private Key → Address (EVM)</td><td><code class="inline-code-block">addresses_evm.txt</code></td></tr><tr><td>3</td><td>Mnemonic → Address (EVM)</td><td><code class="inline-code-block">addresses_evm.txt</code></td></tr><tr><td>4</td><td>Mnemonic → Private Key (Solana)</td><td><code class="inline-code-block">private_keys_solana.txt</code></td></tr><tr><td>5</td><td>Mnemonic → Address (Solana)</td><td><code class="inline-code-block">addresses_solana.txt</code></td></tr><tr><td>6</td><td>Генерация кошельков и сохранение в Excel</td><td><code class="inline-code-block">wallets_{дата}.xlsx</code></td></tr><tr><td>7</td><td>Таблица: Приватники → Адреса и балансы (EVM)</td><td><code class="inline-code-block">addresses_with_balances.csv</code></td></tr></tbody></table></div>
+<blockquote class="not-italic">
 
 > ⚠️ Если модуль `bip_utils` не установлен, Solana-опции будут недоступны.
 
