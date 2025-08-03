@@ -42,7 +42,7 @@ def setup_environment():
         sys.exit(0)
         time.sleep(10)
 
-    for pkg in ["eth_account", "mnemonic", "base58"]:
+    for pkg in ["eth_account", "mnemonic", "base58", "requests", "web3"]:
         ensure_package(pkg)
 
 def try_import_bip_utils():
@@ -194,13 +194,34 @@ def main_menu():
     if MODE == "ALL":
         print("[4] Mnemonic -> Private Key (Solana)")
         print("[5] Mnemonic -> Address (Solana)")
-    else:
-        print("⏹ Solana-функции отключены — доступны только пункты EVM.\n")
+    print("[6] Генерация кошельков и сохранение в Excel")
+    print("[7] Создать таблицу из приватных ключей (адреса + балансы)")  # Новый пункт
+    
+    if MODE != "ALL":
+        print("\n⏹ Solana-функции отключены — доступны только пункты EVM.")
 
     try:
         action = int(input("\n> "))
     except ValueError:
         print("Ошибка: Введите число.")
+        return
+
+    if action == 6:
+        # Запускаем скрипт генерации кошельков
+        print("Запуск скрипта генерации кошельков...")
+        try:
+            subprocess.call([sys.executable, "generate_wallets.py"])
+        except Exception as e:
+            print(f"Ошибка при запуске скрипта генерации кошельков: {e}")
+        return
+    
+    elif action == 7:
+        # Запускаем скрипт создания таблицы из приватных ключей
+        print("Запуск скрипта создания таблицы...")
+        try:
+            subprocess.call([sys.executable, "private_to_table.py"])
+        except Exception as e:
+            print(f"Ошибка при запуске скрипта создания таблицы: {e}")
         return
 
     mnemonics = all_lines(filepath="mnemonics.txt")
